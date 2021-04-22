@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/plansdb
+    username: mcruzdev
+    password: mcruzdev
+  flyway:
+    url: jdbc:postgresql://localhost:5432/plansdb
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+    enabled: true
+    schemas: public
+    locations: classpath:db/migration

@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=mcruzdev
+      - POSTGRES_PASSWORD=mcruzdev
+      - POSTGRES_DB=plansdb
+    ports:
+      - 5432:5432
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mcruzdev.com
+      - PGADMIN_DEFAULT_PASSWORD=mcruzdev
+    ports:
+      - 80:80
